@@ -13,5 +13,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r setup}
 
+## Initialising project libraries and data
+
+library(palmerpenguins)
+library(tidyverse)
+
+data("penguins", package = "palmerpenguins")
 
 ```
