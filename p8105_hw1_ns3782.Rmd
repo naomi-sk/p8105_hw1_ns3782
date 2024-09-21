@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Problem 1
 
-```{r setup}
+```{r setup_data}
 
 ## Initialising project libraries and data
 
@@ -41,6 +41,20 @@ ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)
 
 ggsave("penguin_scatter.png", width = 8, height = 6)
 
+```
+
+## Problem 2
+
+```{r problem_2}
+
+## Creating dataframe with numeric, logical and character vectors
+
+problem2_df = tibble(
+  norm_samp = rnorm(10),
+  vec_logical = norm_samp > 0,
+  vec_char = letters[1:10],
+  vec_factor = factor(c("Level1", "Level2", "Level3", "Level1", "Level2", "Level3", "Level1", "Level2", "Level3", "Level1"))
+)
 
 ```
 
