@@ -1,0 +1,17 @@
+---
+title: "p8105_hw1_ns3782"
+author: "NSK"
+date: "2024-09-21"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Problem 1
+
+```{r setup}
+
+
+```
