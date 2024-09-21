@@ -58,3 +58,24 @@ problem2_df = tibble(
 
 ```
 
+Attempting to take the mean of each variable in problem2_df dataframe.
+
+```{r problem_2_dfmean, error=TRUE}
+
+## Mean of numeric vector
+mean_numeric = mean(pull(problem2_df, norm_samp))
+
+## Mean of logical vector
+mean_logical = mean(pull(problem2_df, vec_logical))
+
+## Mean of character vector
+mean_char = mean(pull(problem2_df, vec_char))
+
+## Mean of factor vector
+mean_factor = mean(pull(problem2_df, vec_factor))
+
+```
+
+We can see that the numeric and logical vectors return numeric values. In the case of the logical vector from problem2_df, this is the proportion of TRUE values as R computes TRUE as 1 and FALSE as 0.
+
+vec_char produces an error message as it is not possible for R to calculate the mean of character values. Similarly, attempts to calculate the average directly for vec_factor does not work as factors are categorical.
