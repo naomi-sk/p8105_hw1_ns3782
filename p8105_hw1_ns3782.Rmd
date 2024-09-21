@@ -25,3 +25,22 @@ data("penguins", package = "palmerpenguins")
 The penguins dataset contains data on `r nrow(penguins)` penguins, with `r ncol(penguins)` variables providing descriptive information for each penguin. These variables include species (`r unique(penguins$species)`), island (`r unique(penguins$island)`), bill length (mm), bill depth (mm), flipper length (mm), body mass (g), sex, and year (year data was collected).
 
 The mean flipper length of the penguins is `r round(mean(penguins$flipper_length_mm, na.rm = TRUE), 2)` mm.
+
+```{r penguins_scatterplot}
+
+## Scatterplot of Flipper Length vs Bill Length in Penguins
+
+ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +
+  geom_point() +
+  labs(title = "Flipper Length vs Bill Length in Penguins",
+       x = "Bill Length (mm)",
+       y = "Flipper Length (mm)",
+       color = "Species")
+
+## Save scatterplot
+
+ggsave("penguin_scatter.png", width = 8, height = 6)
+
+
+```
+
