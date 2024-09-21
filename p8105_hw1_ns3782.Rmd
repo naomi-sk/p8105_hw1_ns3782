@@ -79,3 +79,23 @@ mean_factor = mean(pull(problem2_df, vec_factor))
 We can see that the numeric and logical vectors return numeric values. In the case of the logical vector from problem2_df, this is the proportion of TRUE values as R computes TRUE as 1 and FALSE as 0.
 
 vec_char produces an error message as it is not possible for R to calculate the mean of character values. Similarly, attempts to calculate the average directly for vec_factor does not work as factors are categorical.
+
+Applying the as.numeric() function to the logical, character, and factor variables:
+
+```{r problem_2_asnumeric}
+
+## Converting logical vector to numeric
+as.numeric(pull(problem2_df, vec_logical))
+
+## Converting character vector to numeric
+as.numeric(pull(problem2_df, vec_char))
+
+## Converting factor vector to numeric
+as.numeric(pull(problem2_df, vec_factor))
+
+```
+
+The as.numeric() function is able to convert logical variables like vec_logical successfully, as it treats TRUE as 1 and FALSE as 0. However the function is not able to work with character variables such as those in vec_char and produces NA values, as letters do not have an intrinsic integer value.
+
+For factor variables like vec_factor, as.numeric() converts them based on their underlying integer levels, not their labels. Factors in R use underlying integer values to store categorical data, and each unique category (level) is assigned a numeric code that corresponds to its text label.
+Factors can be converted to numbers, however, this is not automatically performed when calculating means using the mean() function. This is why mean() does not work on factor variables unless converted.
