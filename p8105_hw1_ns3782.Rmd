@@ -47,6 +47,9 @@ ggsave("penguin_scatter.png", width = 8, height = 6)
 
 ```{r problem_2}
 
+## Set seed for reproducibility
+set.seed(123)
+
 ## Creating dataframe with numeric, logical and character vectors
 
 problem2_df = tibble(
